@@ -6,7 +6,7 @@ close all
 
 %% Parameters
 
-system = 3; % 1 = motor, 2 = monocopter, 3 = quadcopter
+system = 1; % 1 = motor, 2 = monocopter, 3 = quadcopter
 
 %% Load data
 
