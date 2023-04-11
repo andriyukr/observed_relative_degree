@@ -6,21 +6,30 @@ close all
 
 %% Parameters
 
-system = 1; % 1 = motor, 2 = monocopter, 3 = quadcopter
+system = 1; % 1 = motor speed, 2 = motor position, 3 = monocopter position, 
+% 4 = quadcopter pose, 5 = unmanned underwater vehicle pose
 
 %% Load data
 
 if system == 1
-    table = readtable("data/motor.txt");
-    [t, command, response] = parse_table(table);
+    data = readtable("data/motor.txt");
+    [t, command, response] = parse_table(data);
 end
 if system == 2
-    table = readtable("data/monocopter.txt");
-    [t, command, response] = parse_table(table);
+    data = readtable("data/motor_position.txt");
+    [t, command, response] = parse_table(data);
 end
 if system == 3
-    table = readtable("data/quadcopter.txt");
-    [t, command, response] = parse_table(table);
+    data = readtable("data/monocopter.txt");
+    [t, command, response] = parse_table(data);
+end
+if system == 4
+    data = readtable("data/quadcopter.txt");
+    [t, command, response] = parse_table(data);
+end
+if system == 5
+    data = readtable("data/uuv.txt");
+    [t, command, response] = parse_table(data);
 end
 
 
